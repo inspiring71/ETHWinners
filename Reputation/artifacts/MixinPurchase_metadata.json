@@ -1,0 +1,1981 @@
+{
+	"compiler": {
+		"version": "0.8.18+commit.87f61d96"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"name": "CANNOT_APPROVE_SELF",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "CANT_BE_SMALLER_THAN_SUPPLY",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "CANT_EXTEND_NON_EXPIRING_KEY",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "GAS_REFUND_FAILED",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "INSUFFICIENT_ERC20_VALUE",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "INSUFFICIENT_VALUE",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "INVALID_ADDRESS",
+				"type": "error"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint8",
+						"name": "hookIndex",
+						"type": "uint8"
+					}
+				],
+				"name": "INVALID_HOOK",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "INVALID_LENGTH",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "INVALID_TOKEN",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "KEY_NOT_VALID",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "KEY_TRANSFERS_DISABLED",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "LOCK_HAS_CHANGED",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "LOCK_SOLD_OUT",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "MAX_KEYS_REACHED",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "MIGRATION_REQUIRED",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "NON_COMPLIANT_ERC721_RECEIVER",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "NON_RENEWABLE_LOCK",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "NOT_ENOUGH_FUNDS",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "NOT_ENOUGH_TIME",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "NOT_READY_FOR_RENEWAL",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "NO_SUCH_KEY",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "NULL_VALUE",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "ONLY_KEY_MANAGER_OR_APPROVED",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "ONLY_LOCK_MANAGER",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "ONLY_LOCK_MANAGER_OR_KEY_GRANTER",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "OUT_OF_RANGE",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "OWNER_CANT_BE_ADDRESS_ZERO",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "SCHEMA_VERSION_NOT_CORRECT",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "TRANSFER_TO_SELF",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "TransferFailed",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "UNAUTHORIZED",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "UNAUTHORIZED_KEY_MANAGER_UPDATE",
+				"type": "error"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "approved",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "Approval",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "operator",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "bool",
+						"name": "approved",
+						"type": "bool"
+					}
+				],
+				"name": "ApprovalForAll",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "onKeyPurchaseHook",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "onKeyCancelHook",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "onValidKeyHook",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "onTokenURIHook",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "onKeyTransferHook",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "onKeyExtendHook",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "onKeyGrantHook",
+						"type": "address"
+					}
+				],
+				"name": "EventHooksUpdated",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "newExpiration",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "bool",
+						"name": "timeAdded",
+						"type": "bool"
+					}
+				],
+				"name": "ExpirationChanged",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "ExpireKey",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "refundValue",
+						"type": "uint256"
+					}
+				],
+				"name": "GasRefundValueChanged",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "receiver",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "refundedAmount",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "tokenAddress",
+						"type": "address"
+					}
+				],
+				"name": "GasRefunded",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint8",
+						"name": "version",
+						"type": "uint8"
+					}
+				],
+				"name": "Initialized",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "newTimestamp",
+						"type": "uint256"
+					}
+				],
+				"name": "KeyExtended",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					}
+				],
+				"name": "KeyGranterAdded",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					}
+				],
+				"name": "KeyGranterRemoved",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "_tokenId",
+						"type": "uint256"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "_newManager",
+						"type": "address"
+					}
+				],
+				"name": "KeyManagerChanged",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "updatedRecordsCount",
+						"type": "uint256"
+					}
+				],
+				"name": "KeysMigrated",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "expirationDuration",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "maxNumberOfKeys",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "maxKeysPerAcccount",
+						"type": "uint256"
+					}
+				],
+				"name": "LockConfig",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					}
+				],
+				"name": "LockManagerAdded",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					}
+				],
+				"name": "LockManagerRemoved",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "oldKeyPrice",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "keyPrice",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "oldTokenAddress",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "tokenAddress",
+						"type": "address"
+					}
+				],
+				"name": "PricingChanged",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "referrer",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "fee",
+						"type": "uint256"
+					}
+				],
+				"name": "ReferrerFee",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "bytes32",
+						"name": "role",
+						"type": "bytes32"
+					},
+					{
+						"indexed": true,
+						"internalType": "bytes32",
+						"name": "previousAdminRole",
+						"type": "bytes32"
+					},
+					{
+						"indexed": true,
+						"internalType": "bytes32",
+						"name": "newAdminRole",
+						"type": "bytes32"
+					}
+				],
+				"name": "RoleAdminChanged",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "bytes32",
+						"name": "role",
+						"type": "bytes32"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "sender",
+						"type": "address"
+					}
+				],
+				"name": "RoleGranted",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "bytes32",
+						"name": "role",
+						"type": "bytes32"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "sender",
+						"type": "address"
+					}
+				],
+				"name": "RoleRevoked",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "from",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "Transfer",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "lockAddress",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "unlockAddress",
+						"type": "address"
+					}
+				],
+				"name": "UnlockCallFailed",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "sender",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "tokenAddress",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "recipient",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "Withdrawal",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "DEFAULT_ADMIN_ROLE",
+				"outputs": [
+					{
+						"internalType": "bytes32",
+						"name": "",
+						"type": "bytes32"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					}
+				],
+				"name": "addLockManager",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_approved",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "approve",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_keyOwner",
+						"type": "address"
+					}
+				],
+				"name": "balanceOf",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "balance",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "burn",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "expirationDuration",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_value",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_tokenId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "_referrer",
+						"type": "address"
+					},
+					{
+						"internalType": "bytes",
+						"name": "_data",
+						"type": "bytes"
+					}
+				],
+				"name": "extend",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "gasRefundValue",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "_refundValue",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "getApproved",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_keyOwner",
+						"type": "address"
+					}
+				],
+				"name": "getHasValidKey",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "isValid",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "role",
+						"type": "bytes32"
+					}
+				],
+				"name": "getRoleAdmin",
+				"outputs": [
+					{
+						"internalType": "bytes32",
+						"name": "",
+						"type": "bytes32"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "role",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					}
+				],
+				"name": "grantRole",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "role",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					}
+				],
+				"name": "hasRole",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_owner",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_operator",
+						"type": "address"
+					}
+				],
+				"name": "isApprovedForAll",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					}
+				],
+				"name": "isLockManager",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_tokenId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "_referrer",
+						"type": "address"
+					}
+				],
+				"name": "isRenewable",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "isValidKey",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "keyExpirationTimestampFor",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "keyManagerOf",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "keyPrice",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "maxKeysPerAddress",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "maxNumberOfKeys",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_tokenIdFrom",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_tokenIdTo",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_amount",
+						"type": "uint256"
+					}
+				],
+				"name": "mergeKeys",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes",
+						"name": "",
+						"type": "bytes"
+					}
+				],
+				"name": "migrate",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "numberOfOwners",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "onKeyCancelHook",
+				"outputs": [
+					{
+						"internalType": "contract ILockKeyCancelHook",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "onKeyExtendHook",
+				"outputs": [
+					{
+						"internalType": "contract ILockKeyExtendHook",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "onKeyGrantHook",
+				"outputs": [
+					{
+						"internalType": "contract ILockKeyGrantHook",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "onKeyPurchaseHook",
+				"outputs": [
+					{
+						"internalType": "contract ILockKeyPurchaseHook",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "onKeyTransferHook",
+				"outputs": [
+					{
+						"internalType": "contract ILockKeyTransferHook",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "onTokenURIHook",
+				"outputs": [
+					{
+						"internalType": "contract ILockTokenURIHook",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "onValidKeyHook",
+				"outputs": [
+					{
+						"internalType": "contract ILockValidKeyHook",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "ownerOf",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "publicLockVersion",
+				"outputs": [
+					{
+						"internalType": "uint16",
+						"name": "",
+						"type": "uint16"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256[]",
+						"name": "_values",
+						"type": "uint256[]"
+					},
+					{
+						"internalType": "address[]",
+						"name": "_recipients",
+						"type": "address[]"
+					},
+					{
+						"internalType": "address[]",
+						"name": "_referrers",
+						"type": "address[]"
+					},
+					{
+						"internalType": "address[]",
+						"name": "_keyManagers",
+						"type": "address[]"
+					},
+					{
+						"internalType": "bytes[]",
+						"name": "_data",
+						"type": "bytes[]"
+					}
+				],
+				"name": "purchase",
+				"outputs": [
+					{
+						"internalType": "uint256[]",
+						"name": "",
+						"type": "uint256[]"
+					}
+				],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_recipient",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_referrer",
+						"type": "address"
+					},
+					{
+						"internalType": "bytes",
+						"name": "_data",
+						"type": "bytes"
+					}
+				],
+				"name": "purchasePriceFor",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "minKeyPrice",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "referrerFees",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_tokenId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "_referrer",
+						"type": "address"
+					}
+				],
+				"name": "renewMembershipFor",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "renounceLockManager",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "role",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					}
+				],
+				"name": "renounceRole",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "role",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					}
+				],
+				"name": "revokeRole",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "schemaVersion",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_onKeyPurchaseHook",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_onKeyCancelHook",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_onValidKeyHook",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_onTokenURIHook",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_onKeyTransferHook",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_onKeyExtendHook",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_onKeyGrantHook",
+						"type": "address"
+					}
+				],
+				"name": "setEventHooks",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_refundValue",
+						"type": "uint256"
+					}
+				],
+				"name": "setGasRefundValue",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_tokenId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "_keyManager",
+						"type": "address"
+					}
+				],
+				"name": "setKeyManagerOf",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_referrer",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_feeBasisPoint",
+						"type": "uint256"
+					}
+				],
+				"name": "setReferrerFee",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes4",
+						"name": "interfaceId",
+						"type": "bytes4"
+					}
+				],
+				"name": "supportsInterface",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "tokenAddress",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_keyOwner",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_index",
+						"type": "uint256"
+					}
+				],
+				"name": "tokenOfOwnerByIndex",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_keyOwner",
+						"type": "address"
+					}
+				],
+				"name": "totalKeys",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "totalSupply",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "unlockProtocol",
+				"outputs": [
+					{
+						"internalType": "contract IUnlock",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_keyPrice",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "_tokenAddress",
+						"type": "address"
+					}
+				],
+				"name": "updateKeyPricing",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_newExpirationDuration",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_maxNumberOfKeys",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_maxKeysPerAcccount",
+						"type": "uint256"
+					}
+				],
+				"name": "updateLockConfig",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "updateSchemaVersion",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_tokenAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "address payable",
+						"name": "_recipient",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_amount",
+						"type": "uint256"
+					}
+				],
+				"name": "withdraw",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"details": "`Mixins` are a design pattern seen in the 0x contracts.  It simply separates logically groupings of code to ease readability.",
+			"events": {
+				"Approval(address,address,uint256)": {
+					"details": "Emitted when `owner` enables `approved` to manage the `tokenId` token."
+				},
+				"ApprovalForAll(address,address,bool)": {
+					"details": "Emitted when `owner` enables or disables (`approved`) `operator` to manage all of its assets."
+				},
+				"Initialized(uint8)": {
+					"details": "Triggered when the contract has been initialized or reinitialized."
+				},
+				"RoleAdminChanged(bytes32,bytes32,bytes32)": {
+					"details": "Emitted when `newAdminRole` is set as ``role``'s admin role, replacing `previousAdminRole` `DEFAULT_ADMIN_ROLE` is the starting admin for all roles, despite {RoleAdminChanged} not being emitted signaling this. _Available since v3.1._"
+				},
+				"RoleGranted(bytes32,address,address)": {
+					"details": "Emitted when `account` is granted `role`. `sender` is the account that originated the contract call, an admin role bearer except when using {AccessControl-_setupRole}."
+				},
+				"RoleRevoked(bytes32,address,address)": {
+					"details": "Emitted when `account` is revoked `role`. `sender` is the account that originated the contract call:   - if using `revokeRole`, it is the admin role bearer   - if using `renounceRole`, it is the role bearer (i.e. `account`)"
+				},
+				"Transfer(address,address,uint256)": {
+					"details": "Emitted when `tokenId` token is transferred from `from` to `to`."
+				}
+			},
+			"kind": "dev",
+			"methods": {
+				"balanceOf(address)": {
+					"returns": {
+						"balance": "The number of valid keys owned by `_keyOwner`"
+					}
+				},
+				"burn(uint256)": {
+					"params": {
+						"_tokenId": "the id of token to burn"
+					}
+				},
+				"extend(uint256,uint256,address,bytes)": {
+					"details": "Extend functionThrows if lock is disabled or key does not exist for _recipient. Throws if _recipient == address(0).",
+					"params": {
+						"_data": "arbitrary data populated by the front-end which initiated the sale",
+						"_referrer": "address of the user making the referral",
+						"_tokenId": "id of the key to extend",
+						"_value": "the number of tokens to pay for this purchase >= the current keyPrice - any applicable discount (_value is ignored when using ETH)"
+					}
+				},
+				"gasRefundValue()": {
+					"details": "Returns value/price to be refunded to the sender on purchase"
+				},
+				"getApproved(uint256)": {
+					"details": "Throws if `_tokenId` is not a valid NFT.",
+					"params": {
+						"_tokenId": "The NFT to find the approved address for"
+					},
+					"returns": {
+						"_0": "The approved address for this NFT, or the zero address if there is none"
+					}
+				},
+				"getHasValidKey(address)": {
+					"params": {
+						"_keyOwner": "the"
+					}
+				},
+				"getRoleAdmin(bytes32)": {
+					"details": "Returns the admin role that controls `role`. See {grantRole} and {revokeRole}. To change a role's admin, use {_setRoleAdmin}."
+				},
+				"grantRole(bytes32,address)": {
+					"details": "Grants `role` to `account`. If `account` had not been already granted `role`, emits a {RoleGranted} event. Requirements: - the caller must have ``role``'s admin role. May emit a {RoleGranted} event."
+				},
+				"hasRole(bytes32,address)": {
+					"details": "Returns `true` if `account` has been granted `role`."
+				},
+				"isApprovedForAll(address,address)": {
+					"details": "Tells whether an operator is approved by a given keyManager",
+					"params": {
+						"_operator": "operator address which you want to query the approval of",
+						"_owner": "owner address which you want to query the approval of"
+					},
+					"returns": {
+						"_0": "bool whether the given operator is approved by the given owner"
+					}
+				},
+				"isRenewable(uint256,address)": {
+					"details": "helper to check if the pricing or duration of the lock have been modified since the key was bought"
+				},
+				"isValidKey(uint256)": {
+					"params": {
+						"_tokenId": "the id of the key to check validity"
+					}
+				},
+				"keyExpirationTimestampFor(uint256)": {
+					"details": "Returns 0 if the owner has never owned a key for this lock",
+					"params": {
+						"_tokenId": "the tokenId of the key"
+					}
+				},
+				"maxKeysPerAddress()": {
+					"returns": {
+						"_0": "the maximum number of key allowed for a single address"
+					}
+				},
+				"mergeKeys(uint256,uint256,uint256)": {
+					"params": {
+						"_amount": "the amount of time to transfer (in seconds)",
+						"_tokenIdFrom": "the id of the token to substract time from",
+						"_tokenIdTo": "the id of the destination token  to add time"
+					}
+				},
+				"ownerOf(uint256)": {
+					"params": {
+						"_tokenId": "the id of the token"
+					},
+					"returns": {
+						"_0": "the address of the owner"
+					}
+				},
+				"purchase(uint256[],address[],address[],address[],bytes[])": {
+					"details": "Purchase functionSetting _value to keyPrice exactly doubles as a security feature. That way if the lock owner increases the price while my transaction is pending I can't be charged more than I expected (only applicable to ERC-20 when more than keyPrice is approved for spending).",
+					"params": {
+						"_data": "arbitrary data populated by the front-end which initiated the sale",
+						"_keyManagers": "optional array of addresses to grant managing rights to a specific address on creation",
+						"_recipients": "array of addresses of the recipients of the purchased key",
+						"_referrers": "array of addresses of the users making the referral",
+						"_values": "array of tokens amount to pay for this purchase >= the current keyPrice - any applicable discount (_values is ignored when using ETH)"
+					}
+				},
+				"purchasePriceFor(address,address,bytes)": {
+					"details": "minKeyPrice considers any discount from Unlock or the OnKeyPurchase hook"
+				},
+				"renewMembershipFor(uint256,address)": {
+					"params": {
+						"_referrer": "the address of the person to be granted UDT",
+						"_tokenId": "the ID fo the token to renew"
+					}
+				},
+				"renounceRole(bytes32,address)": {
+					"details": "Revokes `role` from the calling account. Roles are often managed via {grantRole} and {revokeRole}: this function's purpose is to provide a mechanism for accounts to lose their privileges if they are compromised (such as when a trusted device is misplaced). If the calling account had been revoked `role`, emits a {RoleRevoked} event. Requirements: - the caller must be `account`. May emit a {RoleRevoked} event."
+				},
+				"revokeRole(bytes32,address)": {
+					"details": "Revokes `role` from `account`. If `account` had been granted `role`, emits a {RoleRevoked} event. Requirements: - the caller must have ``role``'s admin role. May emit a {RoleRevoked} event."
+				},
+				"setGasRefundValue(uint256)": {
+					"details": "Set the value/price to be refunded to the sender on purchase"
+				},
+				"setKeyManagerOf(uint256,address)": {
+					"params": {
+						"_keyManager": "the address with the manager's rights for the given key. Setting _keyManager to address(0) means the keyOwner is also the keyManager",
+						"_tokenId": "The id of the key to assign rights for"
+					}
+				},
+				"setReferrerFee(address,uint256)": {
+					"details": "To send a fixed percentage of the key price to all referrers, set a percentage to `address(0)`",
+					"params": {
+						"_feeBasisPoint": "the percentage of the price to be used for this specific referrer (in basis points)",
+						"_referrer": "the address of the referrer. If set to the 0x address, any referrer will receive the fee."
+					}
+				},
+				"supportsInterface(bytes4)": {
+					"details": "See {IERC165-supportsInterface}."
+				},
+				"tokenOfOwnerByIndex(address,uint256)": {
+					"details": "Throws if `_index` >= `totalKeys(_keyOwner)` or if  `_keyOwner` is the zero address, representing invalid keys.",
+					"params": {
+						"_index": "position index in the array of all keys - less than `totalKeys(_keyOwner)`",
+						"_keyOwner": "address of the owner"
+					},
+					"returns": {
+						"_0": "The token identifier for the `_index`th key assigned to `_keyOwner`,   (sort order not specified) NB: name kept to be ERC721 compatible"
+					}
+				},
+				"totalKeys(address)": {
+					"returns": {
+						"_0": "The number of keys owned by `_keyOwner` (expired or not)"
+					}
+				},
+				"updateLockConfig(uint256,uint256,uint256)": {
+					"details": "_maxNumberOfKeys Can't be smaller than the existing supply",
+					"params": {
+						"_maxKeysPerAcccount": "the maximum amount of key a single user can own",
+						"_maxNumberOfKeys": "uint the maximum number of keys",
+						"_newExpirationDuration": "the new amount of time for each key purchased or type(uint).max for a non-expiring key"
+					}
+				},
+				"withdraw(address,address,uint256)": {
+					"details": "Called by owner to withdraw all ETH funds from the lock",
+					"params": {
+						"_amount": "specifies the max amount to withdraw, which may be reduced when considering the available balance. Set to 0 or MAX_UINT to withdraw everything.",
+						"_recipient": "specifies the address to send ETH to."
+					}
+				}
+			},
+			"title": "Mixin for the purchase-related functions.",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"approve(address,uint256)": {
+					"notice": "This approves _approved to get ownership of _tokenId. Note: that since this is used for both purchase and transfer approvals the approved token may not exist."
+				},
+				"balanceOf(address)": {
+					"notice": "In the specific case of a Lock, `balanceOf` returns only the tokens with a valid expiration timerange"
+				},
+				"burn(uint256)": {
+					"notice": "Deactivate an existing keythe key will be expired and ownership records will be destroyed"
+				},
+				"getApproved(uint256)": {
+					"notice": "Get the approved address for a single NFT"
+				},
+				"getHasValidKey(address)": {
+					"notice": "Checks if the user has at least one non-expired key."
+				},
+				"isValidKey(uint256)": {
+					"notice": "Check if a certain key is validthis makes use of the onValidKeyHook if it is set"
+				},
+				"keyExpirationTimestampFor(uint256)": {
+					"notice": "Returns the key's ExpirationTimestamp field for a given token."
+				},
+				"mergeKeys(uint256,uint256,uint256)": {
+					"notice": "Merge existing keys"
+				},
+				"migrate(bytes)": {
+					"notice": "Migrate data from the previous single owner => key mapping to the new data structure w multiple tokens."
+				},
+				"ownerOf(uint256)": {
+					"notice": "Returns the owner of a given tokenId"
+				},
+				"purchase(uint256[],address[],address[],address[],bytes[])": {
+					"notice": "when called for an existing and non-expired key, the `_keyManager` param will be ignored"
+				},
+				"purchasePriceFor(address,address,bytes)": {
+					"notice": "returns the minimum price paid for a purchase with these params."
+				},
+				"renewMembershipFor(uint256,address)": {
+					"notice": "Renew a given tokenonly works for non-free, expiring, ERC20 locks"
+				},
+				"setEventHooks(address,address,address,address,address,address,address)": {
+					"notice": "Allows a lock manager to add or remove an event hook"
+				},
+				"setKeyManagerOf(uint256,address)": {
+					"notice": "Public function for setting the manager for a given key"
+				},
+				"setReferrerFee(address,uint256)": {
+					"notice": "Set a specific percentage of the keyPrice to be sent to the referrer while purchasing, extending or renewing a key."
+				},
+				"tokenAddress()": {
+					"notice": "The token-type that this Lock is priced in.  If 0, then use ETH, else this is a ERC20 token address."
+				},
+				"tokenOfOwnerByIndex(address,uint256)": {
+					"notice": "Returns the id of a key for a specific owner at a specific indexEnumerate keys assigned to an owner"
+				},
+				"updateKeyPricing(uint256,address)": {
+					"notice": "A function which lets the owner of the lock change the pricing for future purchases. This consists of 2 parts: The token address and the price in the given token. In order to set the token to ETH, use 0 for the token Address."
+				},
+				"updateLockConfig(uint256,uint256,uint256)": {
+					"notice": "Update the main key properties for the entire lock: - default duration of each key - the maximum number of keys the lock can edit - the maximum number of keys a single address can holdkeys previously bought are unaffected by this changes in expiration duration (i.e. existing keys timestamps are not recalculated/updated)"
+				},
+				"updateSchemaVersion()": {
+					"notice": "Set the schema version to the latestonly lock manager call call this"
+				}
+			},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"Reputation/PublicLockV13.sol": "MixinPurchase"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"Reputation/PublicLockV13.sol": {
+			"keccak256": "0x3151c081aaf1fe60df47d090c37dee2769380e39f438033a34c6ae5b87fa977e",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://bd86323f07c5ea30dfccdf11b2d8c17b3abecf3261e793097bb816f5b301f542",
+				"dweb:/ipfs/QmeZmaYt45JRHbJpFjxZw5w6K1E15935cohBULNiUERnd2"
+			]
+		}
+	},
+	"version": 1
+}

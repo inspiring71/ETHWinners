@@ -1,0 +1,96 @@
+{
+	"compiler": {
+		"version": "0.8.18+commit.87f61d96"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "from",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "recipient",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "keyManager",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "expiration",
+						"type": "uint256"
+					}
+				],
+				"name": "onKeyGranted",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"details": "Lock hooks are configured by calling `setEventHooks` on the lock.",
+			"kind": "dev",
+			"methods": {
+				"onKeyGranted(uint256,address,address,address,uint256)": {
+					"details": "the lock's address is the `msg.sender` when this function is called",
+					"params": {
+						"expiration": "the expiration timestamp of the key",
+						"from": "the msg.sender granting the key",
+						"keyManager": "an additional keyManager for the key",
+						"recipient": "the account which will be granted a key",
+						"tokenId": "the id of the granted key"
+					}
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"onKeyGranted(uint256,address,address,address,uint256)": {
+					"notice": "If the lock owner has registered an implementer then this hook is called with every key granted."
+				}
+			},
+			"notice": "Functions to be implemented by a KeyGrantedHook.",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"Reputation/PublicLockV13.sol": "ILockKeyGrantHook"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"Reputation/PublicLockV13.sol": {
+			"keccak256": "0x3151c081aaf1fe60df47d090c37dee2769380e39f438033a34c6ae5b87fa977e",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://bd86323f07c5ea30dfccdf11b2d8c17b3abecf3261e793097bb816f5b301f542",
+				"dweb:/ipfs/QmeZmaYt45JRHbJpFjxZw5w6K1E15935cohBULNiUERnd2"
+			]
+		}
+	},
+	"version": 1
+}

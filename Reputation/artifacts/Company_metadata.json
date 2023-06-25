@@ -1,0 +1,543 @@
+{
+	"compiler": {
+		"version": "0.8.18+commit.87f61d96"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "ID",
+						"type": "string"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "string",
+						"name": "new_employee",
+						"type": "string"
+					}
+				],
+				"name": "NewEmployee",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "string",
+						"name": "employee",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "string[]",
+						"name": "employees",
+						"type": "string[]"
+					},
+					{
+						"indexed": false,
+						"internalType": "contract Company",
+						"name": "company",
+						"type": "address"
+					}
+				],
+				"name": "RemovedEmployee",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "ID",
+						"type": "string"
+					}
+				],
+				"name": "add_employee",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"name": "employees",
+				"outputs": [
+					{
+						"internalType": "contract Employee",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "main_contract",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"name": "old_employees",
+				"outputs": [
+					{
+						"internalType": "contract Employee",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "ID",
+						"type": "string"
+					}
+				],
+				"name": "removeElement",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "ID",
+						"type": "string"
+					}
+				],
+				"name": "remove_employee",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "requested_company_ID",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "user_ID",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "current_company_ID",
+						"type": "string"
+					}
+				],
+				"name": "review_Request",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"Reputation/Company.sol": "Company"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"@thirdweb-dev/contracts/dynamic-contracts/extension/AccountPermissions.sol": {
+			"keccak256": "0x2765a53b4456721a775bed5002f49dc84c4db372ac7e939f386a942ca4d92099",
+			"license": "Apache-2.0",
+			"urls": [
+				"bzz-raw://b4e512af04327205c4de8abd5eb0a0938c64ff8947ba6de3c2bca6bc3fc22a81",
+				"dweb:/ipfs/QmaGuXYjCnbMPo9QVNGpfmjW5DRgz25X4B1Fykbjk5ZbFi"
+			]
+		},
+		"@thirdweb-dev/contracts/dynamic-contracts/extension/ContractMetadata.sol": {
+			"keccak256": "0x0b4a5fc3d809eccb23851684b04ce20a0b8a7f8a1fd11988660268c02ff11a33",
+			"license": "Apache-2.0",
+			"urls": [
+				"bzz-raw://fee0d7f6894883b0c107bd35bf61f863b3fa3c19770f310b8ac4169d13101d5a",
+				"dweb:/ipfs/Qmcmobv1iAzjefBCJ71yZWpdfCVMnA42YNJtacwJQprxQM"
+			]
+		},
+		"@thirdweb-dev/contracts/dynamic-contracts/extension/Initializable.sol": {
+			"keccak256": "0x1679b562e7e9d9b5fa34abf9671cd4ada7bbc7f0f40bcf18fb8e05bf88962685",
+			"license": "Apache 2.0",
+			"urls": [
+				"bzz-raw://d97aac4f1dd707f1c3440c1614bc9aea4b0ef138bcb236d99632585341fcfd0d",
+				"dweb:/ipfs/QmNyQ5giiw4sUUCxoNR23D6BQuGL3qpvThWsErZpTnLD1d"
+			]
+		},
+		"@thirdweb-dev/contracts/eip/ERC1271.sol": {
+			"keccak256": "0xce12f73b64a1d954ce3b96cc83974d9a9d7b1e6f34e75ed8c1fdcf19ed92574e",
+			"license": "Apache 2.0",
+			"urls": [
+				"bzz-raw://ac19729c3f76aa804eff7dd0365bfaff3871b22953908a26cc0dd07a0319c6c0",
+				"dweb:/ipfs/QmTQMZGceJ4QvWAwngCEbt6PfQhZMHWhuzE8wWVC8yR7Ro"
+			]
+		},
+		"@thirdweb-dev/contracts/eip/ERC165.sol": {
+			"keccak256": "0x0ea604ea6ebe99809a2f620009c8dead82d7fb17ab12b734e1e29c8ceb85938b",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://d9d109154c913e34d107db2cec5608dd8a55075dee35ae77aa78ebb9ff7d856c",
+				"dweb:/ipfs/QmW8QKw4kag1Bv68FjSZiGvPP8WDocjdhLSd3ssUXZ5Kgr"
+			]
+		},
+		"@thirdweb-dev/contracts/eip/interface/IERC165.sol": {
+			"keccak256": "0x35d0a916f70344a5fcc6c67cb531b6150d2fce43e72a6282385eab02020f2f49",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://75ccd8b9a8b52a93b8097fcb8181b7afb6d72bbe6eaabf434f0481a7a207cc8a",
+				"dweb:/ipfs/QmPUZAEE4nwkijcE2amAXAWEVGVG5XaKWGhpgnRwpAf93R"
+			]
+		},
+		"@thirdweb-dev/contracts/eip/interface/IERC721.sol": {
+			"keccak256": "0xbd9f2dd131e8f1e4e50b1b116eae917510ab9bf5d4356de37c5daf4cffdfa049",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://8ac3530b317083464271b100de1976ed9179b9e7d5a4fc3d992c61c80676a676",
+				"dweb:/ipfs/QmUq1AVzymvp7Y8H1eypGEGU4icjzn5vDSvKMNpXnoaeMT"
+			]
+		},
+		"@thirdweb-dev/contracts/extension/Multicall.sol": {
+			"keccak256": "0x737a71c74307fa360863550d64bbaef599bbcb47829b19c3743ed1ff22b9af55",
+			"license": "Apache 2.0",
+			"urls": [
+				"bzz-raw://7e82a79ee183dffa3ec01faac0907e04d72a185e55b7c24bff8e8e952b05f4c2",
+				"dweb:/ipfs/QmQ9neZqpcgJtGgm84FBzMqFntZ1Sk1KFTWhjCMq8vnKDg"
+			]
+		},
+		"@thirdweb-dev/contracts/extension/interface/IAccountPermissions.sol": {
+			"keccak256": "0xc932c90a1392e8f9c441b6ef86bea672834795cc41624363c754c108cad3b7d1",
+			"license": "Apache-2.0",
+			"urls": [
+				"bzz-raw://3e890ce40b8fb9cf22516532af651d34d1b09bb85be7ce4ac18a259bb5aad769",
+				"dweb:/ipfs/QmRdkhpyvFUCYoGGtsecvuACvLv6Ji15MfMHGK6XQuQoFi"
+			]
+		},
+		"@thirdweb-dev/contracts/extension/interface/IContractMetadata.sol": {
+			"keccak256": "0x41d3f7f43c124e9ff0247cb94f4e8fc8c5a79b1de331c67eb03654154248d7f2",
+			"license": "Apache-2.0",
+			"urls": [
+				"bzz-raw://fa8d6251cf3a876193cc719b456c02ff23d3f2d5486431e9bdaf290be9a4ce9a",
+				"dweb:/ipfs/QmRwnA2q15Vdkc66fz6BAinZM3tjuVNHn5CeGzc7ZFMAzr"
+			]
+		},
+		"@thirdweb-dev/contracts/extension/interface/IMulticall.sol": {
+			"keccak256": "0xe2bbd37b8fdb9cc8b933e598512a068ebb214b3f5abc2bc634916def55be4ef3",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://012352099c262348ac755a53b082af520babc6c66dc5f1251fc23609728340ca",
+				"dweb:/ipfs/QmcXEgzQ53jdJX5ZNy8zivvUjDq7J8WTnR1yAiwTpkQ2ar"
+			]
+		},
+		"@thirdweb-dev/contracts/lib/BytesLib.sol": {
+			"keccak256": "0xbed6b32c32e2fdbc25ffc9569b5ce8655b321ade31dff76fa2edcae97e56239c",
+			"license": "Apache 2.0",
+			"urls": [
+				"bzz-raw://2b068bd88b6141b2c501dffe39959b02bc39c3dcec9e7c4f6201d347d1f3c73f",
+				"dweb:/ipfs/QmXXpP5roDyhBz1uPFRx6i3A9tzrPY4rcdo2GQ6THSmz2K"
+			]
+		},
+		"@thirdweb-dev/contracts/lib/TWAddress.sol": {
+			"keccak256": "0x460f032cf3bf43d586e126ab2ec8be4335767f497ccb699741546a1cfba94a7e",
+			"license": "Apache 2.0",
+			"urls": [
+				"bzz-raw://28fcbf6dde6c2eeb9864f6ec6f21dcc81ec426877debf4b912f2f3bc5b0fc91e",
+				"dweb:/ipfs/QmS1SHrZDfefX8EE7DdvszTY6VPCHydf4HM7NKJ2gP72e6"
+			]
+		},
+		"@thirdweb-dev/contracts/lib/TWStrings.sol": {
+			"keccak256": "0xef7e9954d888f99baffc10db1d9bf6a2beb66c842d81dea90352ddded22cbbf8",
+			"license": "Apache 2.0",
+			"urls": [
+				"bzz-raw://832415134684f5413f9d0f3f5536aa30848690cfe54769f7730a3807438f3bf9",
+				"dweb:/ipfs/QmduTiUdtsnyJVMXpdomohEWDVg46aZhnS9uTURu4x1NYt"
+			]
+		},
+		"@thirdweb-dev/contracts/openzeppelin-presets/proxy/Clones.sol": {
+			"keccak256": "0x888d64d221d52c31d015b76e50ca1af5ef8ff076550810b49cea6b01d8267a10",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://4da0f451fe5aefdb95204dbec4a9448a8a2b00a444864bb5dbf7162da842a0f7",
+				"dweb:/ipfs/QmYciAwNiJzgGMAqSTUANwMjy5HykNUvmkQ5PQhNTRqrB5"
+			]
+		},
+		"@thirdweb-dev/contracts/openzeppelin-presets/token/ERC1155/IERC1155Receiver.sol": {
+			"keccak256": "0x9d3695e1e674322cf8914e748c87a2f3d01b3ea025ba1a4a65edf313d097ab76",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://b891b34602e0028ba9bd4d021645e6966e7bdd7d8926dff45fa0b0da3b290214",
+				"dweb:/ipfs/QmQdodZQoaMCH5eCjv3ymdgDU4rJ5gNbx3zBdmWUczF3pv"
+			]
+		},
+		"@thirdweb-dev/contracts/openzeppelin-presets/token/ERC1155/utils/ERC1155Holder.sol": {
+			"keccak256": "0x2e024ca51ce5abe16c0d34e6992a1104f356e2244eb4ccbec970435e8b3405e3",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://a74009db3c6fc8db851ba69ddb6795b5c1ef1120c5a00fd1a8dc3a717dd9d519",
+				"dweb:/ipfs/QmZMk8Yh2X3gPS51ckUVLEXjZUhMSEeGApnA53WtjvLb9h"
+			]
+		},
+		"@thirdweb-dev/contracts/openzeppelin-presets/token/ERC1155/utils/ERC1155Receiver.sol": {
+			"keccak256": "0x4cae1e8db957cc048252f55d6aecd00b2e83668efc2501f99afc44539c60684a",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://ae2921ee18b1d9f9e11880ad9c945b9d4f278b03441e9a6fd4d6316588331c4d",
+				"dweb:/ipfs/QmScMvJNDthnuV6S78KNMSZ4DiduJLu82yjVweYbRzMfKG"
+			]
+		},
+		"@thirdweb-dev/contracts/openzeppelin-presets/token/ERC721/IERC721Receiver.sol": {
+			"keccak256": "0xd5fa74b4fb323776fa4a8158800fec9d5ac0fec0d6dd046dd93798632ada265f",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://33017a30a99cc5411a9e376622c31fc4a55cfc6a335e2f57f00cbf24a817ff3f",
+				"dweb:/ipfs/QmWNQtWTPhA7Lo8nbxbc8KFMvZwbFYB8fSeEQ3vuapSV4a"
+			]
+		},
+		"@thirdweb-dev/contracts/openzeppelin-presets/token/ERC721/utils/ERC721Holder.sol": {
+			"keccak256": "0x0108bf6a6ebd5f96678bed33a35947537263f96766131ee91461fb6485805028",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://ae2d274bf3d56a6d49a9bbd0a4871c54997a82551eb3eb1c0c39dc98698ff8bf",
+				"dweb:/ipfs/QmTT7ty5DPGAmRnx94Xu3TUDYGSPDVLN2bppJAjjedrg1e"
+			]
+		},
+		"@thirdweb-dev/contracts/openzeppelin-presets/utils/cryptography/ECDSA.sol": {
+			"keccak256": "0xe7c8a90c658962ae2d706fb5a4e522404b11a06347d36186e0d64a26d8f58d2e",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://1e6b4d213258d6693acd3b6131f723e01bf2629c48520103986c5ec039f144f8",
+				"dweb:/ipfs/QmQvzsASAkfs4BwPSKE4Quu3dxzseHNBehNntLyGfdwJuN"
+			]
+		},
+		"@thirdweb-dev/contracts/openzeppelin-presets/utils/cryptography/EIP712.sol": {
+			"keccak256": "0x6688fad58b9ec0286d40fa957152e575d5d8bd4c3aa80985efdb11b44f776ae7",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://8bc00ab7f133cdaafd212a5cc6a16c8d37319721105d130c8e5af0c4e8f170ba",
+				"dweb:/ipfs/QmVmf6LVMfFiEkvKYLzSv3bGHzymEW93AcUuFrNUdY3NtT"
+			]
+		},
+		"@thirdweb-dev/contracts/openzeppelin-presets/utils/structs/EnumerableSet.sol": {
+			"keccak256": "0x5050943b32b6a8f282573d166b2e9d87ab7eb4dbba4ab6acf36ecb54fe6995e4",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://d4831d777a29ebdf9f2caecd70e74b97bff1b70e53622fd0a02aed01e21c8271",
+				"dweb:/ipfs/QmUqurVVnCc7XkMxb2k23TVQUtuhHZduJ3hTZarTJrqU24"
+			]
+		},
+		"@thirdweb-dev/contracts/smart-wallet/interfaces/IAccount.sol": {
+			"keccak256": "0x98f2d41bd69f4b46a697957681d2e14cf2f10b6133ede864b838f821899d4e41",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://ddaae235044c84994f693a38030d3923bb8e65f9b7f1fc5028a424a16f7a723c",
+				"dweb:/ipfs/QmdXzv1k9mdECGxUDigBf6GAb3bn3qMdTKcmGadJ4EoLzL"
+			]
+		},
+		"@thirdweb-dev/contracts/smart-wallet/interfaces/IAccountFactory.sol": {
+			"keccak256": "0x76e439ea3ec5408f2006fd1661f6aa9d7dfb4cd399cc94a40c649a5265832cc7",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://b5301a8019c72f1253e44d8a27f4f6f40309dba85eadd25e214d0f8fa1ac3c27",
+				"dweb:/ipfs/QmRevDCZzAU7THZwk27ZSYj9UdsiXB6bbPEmqedXxpzG1d"
+			]
+		},
+		"@thirdweb-dev/contracts/smart-wallet/interfaces/IAggregator.sol": {
+			"keccak256": "0xf933b69fee393c235a75d99f8d310091b955e8af0240d3855939e16e86a85873",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://772937aa4c500fac35a8edf31c413c59d307d8558c941272a51deba44c0f730e",
+				"dweb:/ipfs/QmNvW9G3BCTLFvSBb15ZqJMzETWF5drE7gAfbLxkz6aknJ"
+			]
+		},
+		"@thirdweb-dev/contracts/smart-wallet/interfaces/IEntrypoint.sol": {
+			"keccak256": "0xe94c12629f153c344d698c207f32a0744b49d3849df95101e631fbb96a8f6f8d",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://810ae34240668bf730ffd252bff57ff6f94215c6a461c6d42bc9b8842a0e5114",
+				"dweb:/ipfs/QmQ1SnuCxgvEAHS4z2y6Vz4P5scwCxRP1wBqYQvKcabqAK"
+			]
+		},
+		"@thirdweb-dev/contracts/smart-wallet/interfaces/INonceManager.sol": {
+			"keccak256": "0xf509795f7336c849ac5d247d71af20376b67201c647aa847fd17ca8e7909dec3",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://b3418173e37999ba0015bb352ab1b9dfbe1296143a8565ea3d3ce7a9a9e087b4",
+				"dweb:/ipfs/QmS93Dw1FfPj5kHk9cLrh1VssbwNyaKKo5LNmEHwxzDqNp"
+			]
+		},
+		"@thirdweb-dev/contracts/smart-wallet/interfaces/IStakeManager.sol": {
+			"keccak256": "0x61562da096c3c3da5755bbb5b552ea713723d7be36975cd401022ff321753b73",
+			"license": "GPL-3.0-only",
+			"urls": [
+				"bzz-raw://e6bcd63477257007d2fcd92b38c8105cb82c2d0eae3836ac856839234481f4ab",
+				"dweb:/ipfs/QmZuNE3y1RvtRXYiw3eiT25YQH2SAa1kFcpxAgW9KX6KtZ"
+			]
+		},
+		"@thirdweb-dev/contracts/smart-wallet/non-upgradeable/Account.sol": {
+			"keccak256": "0x0186dbab4ae274480002578b6831aa96b0442cfb6711fbfde306e1ce843cd300",
+			"license": "Apache-2.0",
+			"urls": [
+				"bzz-raw://4ccc5ca2f123cb14318860dc3ad1b55c8b406ba89ec1cd71c92b1bb4ac46fe4c",
+				"dweb:/ipfs/QmSkBHcQKkEfGbmGmPwJfAzZVaRbdHQwBbybo3wv737W49"
+			]
+		},
+		"@thirdweb-dev/contracts/smart-wallet/utils/BaseAccount.sol": {
+			"keccak256": "0xdd1a564a2151cd6ee4d0cea6a2a4bd02e678600761f784ce909493228a80e69c",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://460dac3ad82f86bed2d6e33ec36a4c5f61b87e1135fe1fee18f6be3a2246fa67",
+				"dweb:/ipfs/QmcoQaEux8rDgfgG1xPadAH5uviBv8oS3JHC3sc6fMRasb"
+			]
+		},
+		"@thirdweb-dev/contracts/smart-wallet/utils/BaseAccountFactory.sol": {
+			"keccak256": "0xdbde7896b4cf3f0d0d675676516011b4c7fda88fde38058fb62c9673a1669414",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://586eb62f383ceedb3801c1fb421aff5c290dac6f51c2b37637aca51adcb63158",
+				"dweb:/ipfs/QmYJXucxnsPqs9bWhEVa4D5TD5vcnPxEryeMDZJc7PQEmd"
+			]
+		},
+		"@thirdweb-dev/contracts/smart-wallet/utils/Helpers.sol": {
+			"keccak256": "0xb7d1f138c5d0a2d3302c2256d2bd0ab8976baf89edfe0d2de35c5017aeb079c7",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://a2a8db74e00c5e83f03f35f067a341df50b2171877f1847cd1b544fac6457561",
+				"dweb:/ipfs/QmZyhkL5WD97uMmpiXWqjipiWGN1GLhZgadXR56eLQMZEh"
+			]
+		},
+		"@thirdweb-dev/contracts/smart-wallet/utils/UserOperation.sol": {
+			"keccak256": "0x3f3aa133687f459f9fb538835a54aa769418dd6303a02c9fa691690fcc397964",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://993f8daa2320ca301167767fff33a6989697394fe6dc65905edc4b32368850b5",
+				"dweb:/ipfs/Qmaymg8dsE6mrfAWJPs4DXbHR1wxESJnxyFhNkm7AmKBCK"
+			]
+		},
+		"Reputation/Company.sol": {
+			"keccak256": "0x17f91b9f3f0fe39a9cf4c8c1d4c734320f1dbf6456e1e20c8b18e342ef4bd16c",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://6da6a61acc651a3de1f56ce344579b0777c2651db36441c9978508bc3430179f",
+				"dweb:/ipfs/QmRh7opWm5SuAzn6XPH81XKjB3SVyfxmu1FKZ8FXnBsW4N"
+			]
+		},
+		"Reputation/Employee.sol": {
+			"keccak256": "0xeafaa78494d3f2aca780f0c7ad43604a68a3f1fd89e083ab80e7d5df8c2138d5",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://390f55993fa0402b81ce8ca284cc9d539a65be92a44c47a2aa96e8d10ea9afb6",
+				"dweb:/ipfs/QmbJ2DFnHayd31Cz5RRaRzMg6N1dfdKmCbR8sJEygM5Q7W"
+			]
+		},
+		"Reputation/Reputation.sol": {
+			"keccak256": "0x34c07be9dcbe815ff91a8edaa78aae333e9d2808e24e5b6e204a643d773ec9ad",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://9932fa0cb3b23e42e1b1ed3ee02c40a003863a24beb5a64701592b19545e8eca",
+				"dweb:/ipfs/QmZksB5o1DtFK61WmDSEyMCjYuXp2VrhpMPenSpwTebFdJ"
+			]
+		},
+		"Reputation/SimpleToken.sol": {
+			"keccak256": "0xc64cfe3e5c6c1a667f607103b2a133b2cf021f88e1c7355c4e2eba4a5ad8b006",
+			"urls": [
+				"bzz-raw://bb0cb9aad443f5848dd63c5beff3f217fb75cd0979749df0f5d4452da123845b",
+				"dweb:/ipfs/QmYvzdsgo5ya9XEzJkEAKyfxyRPnfBSGUj5qV8iCr7uQ39"
+			]
+		},
+		"Reputation/TokenBound.sol": {
+			"keccak256": "0xa3cf28a965542d7baa43fa50ef72503636a25f76a9f94c247da3ad3ecc872b98",
+			"license": "UNLICENSED",
+			"urls": [
+				"bzz-raw://9f9ec75c9c3095616cc6630f6db37169ed253e7ab66f0a9746e262f8750cab7e",
+				"dweb:/ipfs/QmPZvfT3vWyGMvWU3UEH7FTZ5nycULWZ8MRtB8eq91gXwW"
+			]
+		},
+		"https://github.com/erc6551/reference/blob/main/src/interfaces/IERC6551Account.sol": {
+			"keccak256": "0xe974c53b1621a414029a22dbbeae11adeb4b23424d705253c36c8b51a2c662c6",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://b5a946315dc6a556ab58d33218b786bf301d0a35bc255ef3ce7fced5eb7c4ad7",
+				"dweb:/ipfs/QmUynQj6KfW1iJgWQcbkfcFaZB1pnd1pWRen2CPrQP6pfy"
+			]
+		},
+		"https://github.com/erc6551/reference/blob/main/src/lib/ERC6551AccountLib.sol": {
+			"keccak256": "0x64e9f80e8ba2a6adfb6cdfa3443a2e1324252731849366678ec8e9a55ee9cf4e",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://92c2c0134f1fd4a181b269f212f7c8ab62a4a859bd1e708178febbf0788d2cd3",
+				"dweb:/ipfs/Qma7TToHAe8m9mBrsocXweqFY7KPsFuF2bf15A9GnZibbu"
+			]
+		},
+		"https://github.com/erc6551/reference/blob/main/src/lib/ERC6551BytecodeLib.sol": {
+			"keccak256": "0xa318f11a48b3ef8c8ffb874925dea296092794fdc004a959b068bf6c3b14d426",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://01a677c30b55306463b56fae67398f1b0b63590c291c1dd99e8d221f11f6cfff",
+				"dweb:/ipfs/QmQTYSFqkvKf5vnQzcE4zBJcnGMKyVDfxCPqropWhzmTCr"
+			]
+		},
+		"openzeppelin-contracts/utils/Create2.sol": {
+			"keccak256": "0xf35335925904418fa03f87f35feddc196c7fd2b4d6397a1c45c427085cee3707",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://a34e0ddd064ea21dbde3d25c614d5966ba26accba2e94029044f5aa38cc9bfdd",
+				"dweb:/ipfs/QmQyB5mjtKGzKz2e3bsEYyS7Ri4YPP81jvwF3hBMvEfL3r"
+			]
+		}
+	},
+	"version": 1
+}

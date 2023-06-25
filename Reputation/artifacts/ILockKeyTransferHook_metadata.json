@@ -1,0 +1,101 @@
+{
+	"compiler": {
+		"version": "0.8.18+commit.87f61d96"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "lockAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "operator",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "from",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "expirationTimestamp",
+						"type": "uint256"
+					}
+				],
+				"name": "onKeyTransfer",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"details": "Lock hooks are configured by calling `setEventHooks` on the lock.",
+			"kind": "dev",
+			"methods": {
+				"onKeyTransfer(address,uint256,address,address,address,uint256)": {
+					"params": {
+						"expirationTimestamp": "the key expiration timestamp (after transfer)",
+						"from": "the previous owner of transferred key",
+						"lockAddress": "the address of the current lock",
+						"operator": "who initiated the transfer",
+						"to": "the new owner of the key",
+						"tokenId": "the Id of the transferred key"
+					}
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"onKeyTransfer(address,uint256,address,address,address,uint256)": {
+					"notice": "If the lock owner has registered an implementer then this hook is called every time balanceOf is called"
+				}
+			},
+			"notice": "Functions to be implemented by a onKeyTransferHook Hook.",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"Reputation/PublicLockV13.sol": "ILockKeyTransferHook"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"Reputation/PublicLockV13.sol": {
+			"keccak256": "0x3151c081aaf1fe60df47d090c37dee2769380e39f438033a34c6ae5b87fa977e",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://bd86323f07c5ea30dfccdf11b2d8c17b3abecf3261e793097bb816f5b301f542",
+				"dweb:/ipfs/QmeZmaYt45JRHbJpFjxZw5w6K1E15935cohBULNiUERnd2"
+			]
+		}
+	},
+	"version": 1
+}

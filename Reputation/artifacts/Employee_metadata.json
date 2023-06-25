@@ -1,0 +1,156 @@
+{
+	"compiler": {
+		"version": "0.8.18+commit.87f61d96"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "id",
+						"type": "string"
+					},
+					{
+						"internalType": "contract Company",
+						"name": "current_company",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "contract Company",
+						"name": "old_company",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "contract Company",
+						"name": "new_comapny",
+						"type": "address"
+					}
+				],
+				"name": "NewCompany",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "ID",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "contract Company",
+						"name": "new_company",
+						"type": "address"
+					}
+				],
+				"name": "changeCompany",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "employee_address",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "main_contract",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"Reputation/Employee.sol": "Employee"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"Reputation/Company.sol": {
+			"keccak256": "0xe2bab6b47e5a6838941d6af03831aa44ad2ee6eecb3fa016fc0db450a5bd3137",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://30355ea5af03e38e6df646ec5f05b7609fe87d6a066ef2b6e8527067c058720e",
+				"dweb:/ipfs/Qme4dKWCCb18XB71gEjH9pfx8YQnCzacbFXfA2py2N4jnR"
+			]
+		},
+		"Reputation/Employee.sol": {
+			"keccak256": "0x15525bb1e905e3a40c3c91cc1a98a6236ce4f0f6ac64425782a1a32c73a87adc",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://aacd5f1e6d8b525fc7870faa7bd6f7ac25d9ba5cc6336df4a28bec293a006d1a",
+				"dweb:/ipfs/QmPXviKxAWyZoAHgt5gdjjfNGUKBoMrnC78thp5tHZWpF6"
+			]
+		},
+		"Reputation/Reputation.sol": {
+			"keccak256": "0x7a2079df1750eda6bf52d19c82833a2cc73568a704f743db2ab4c51f50744ada",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://97adc2957d2eefaa8db37c3ce6109ae7f833528bfcc5bbb42e9f4d084d37d134",
+				"dweb:/ipfs/QmZWSD1SnxbegTg6MfGxGGigtYU1q5uoLSXCPEcDrYEtpt"
+			]
+		},
+		"Reputation/SimpleToken.sol": {
+			"keccak256": "0x809dfa18e1564bcb2464e16aa05965b33fc78a183467b131023a689b836c661a",
+			"urls": [
+				"bzz-raw://e3b06f6a20c504b9295a785f09f3af79ac17806502448fc2e15238be4cbee92c",
+				"dweb:/ipfs/QmZExjdPgyGMaAKZWpNBw29EUdBzYGP8jnXXzroB1B1fMh"
+			]
+		}
+	},
+	"version": 1
+}

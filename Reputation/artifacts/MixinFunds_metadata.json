@@ -1,0 +1,230 @@
+{
+	"compiler": {
+		"version": "0.8.18+commit.87f61d96"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"name": "CANNOT_APPROVE_SELF",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "CANT_BE_SMALLER_THAN_SUPPLY",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "CANT_EXTEND_NON_EXPIRING_KEY",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "GAS_REFUND_FAILED",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "INSUFFICIENT_ERC20_VALUE",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "INSUFFICIENT_VALUE",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "INVALID_ADDRESS",
+				"type": "error"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint8",
+						"name": "hookIndex",
+						"type": "uint8"
+					}
+				],
+				"name": "INVALID_HOOK",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "INVALID_LENGTH",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "INVALID_TOKEN",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "KEY_NOT_VALID",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "KEY_TRANSFERS_DISABLED",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "LOCK_HAS_CHANGED",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "LOCK_SOLD_OUT",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "MAX_KEYS_REACHED",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "MIGRATION_REQUIRED",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "NON_COMPLIANT_ERC721_RECEIVER",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "NON_RENEWABLE_LOCK",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "NOT_ENOUGH_FUNDS",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "NOT_ENOUGH_TIME",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "NOT_READY_FOR_RENEWAL",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "NO_SUCH_KEY",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "NULL_VALUE",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "ONLY_KEY_MANAGER_OR_APPROVED",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "ONLY_LOCK_MANAGER",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "ONLY_LOCK_MANAGER_OR_KEY_GRANTER",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "OUT_OF_RANGE",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "OWNER_CANT_BE_ADDRESS_ZERO",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "SCHEMA_VERSION_NOT_CORRECT",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "TRANSFER_TO_SELF",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "UNAUTHORIZED",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "UNAUTHORIZED_KEY_MANAGER_UPDATE",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "tokenAddress",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"title": "An implementation of the money related functions.",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"tokenAddress()": {
+					"notice": "The token-type that this Lock is priced in.  If 0, then use ETH, else this is a ERC20 token address."
+				}
+			},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"Reputation/PublicLockV13.sol": "MixinFunds"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"Reputation/PublicLockV13.sol": {
+			"keccak256": "0x3151c081aaf1fe60df47d090c37dee2769380e39f438033a34c6ae5b87fa977e",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://bd86323f07c5ea30dfccdf11b2d8c17b3abecf3261e793097bb816f5b301f542",
+				"dweb:/ipfs/QmeZmaYt45JRHbJpFjxZw5w6K1E15935cohBULNiUERnd2"
+			]
+		}
+	},
+	"version": 1
+}

@@ -1,0 +1,227 @@
+{
+	"deploy": {
+		"VM:-": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"main:1": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"ropsten:3": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"rinkeby:4": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"kovan:42": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"goerli:5": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"Custom": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		}
+	},
+	"data": {
+		"bytecode": {
+			"functionDebugData": {},
+			"generatedSources": [],
+			"linkReferences": {},
+			"object": "6080604052348015600f57600080fd5b50603f80601d6000396000f3fe6080604052600080fdfea2646970667358221220e6030eedc06d88f370a3131399566fa32ad22b28a96af7cb772d38cab0a8868364736f6c63430008120033",
+			"opcodes": "PUSH1 0x80 PUSH1 0x40 MSTORE CALLVALUE DUP1 ISZERO PUSH1 0xF JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST POP PUSH1 0x3F DUP1 PUSH1 0x1D PUSH1 0x0 CODECOPY PUSH1 0x0 RETURN INVALID PUSH1 0x80 PUSH1 0x40 MSTORE PUSH1 0x0 DUP1 REVERT INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 0xE6 SUB 0xE 0xED 0xC0 PUSH14 0x88F370A3131399566FA32AD22B28 0xA9 PUSH11 0xF7CB772D38CAB0A8868364 PUSH20 0x6F6C634300081200330000000000000000000000 ",
+			"sourceMap": "53823:1376:0:-:0;;;;;;;;;;;;;;;;;;;"
+		},
+		"deployedBytecode": {
+			"functionDebugData": {},
+			"generatedSources": [],
+			"immutableReferences": {},
+			"linkReferences": {},
+			"object": "6080604052600080fdfea2646970667358221220e6030eedc06d88f370a3131399566fa32ad22b28a96af7cb772d38cab0a8868364736f6c63430008120033",
+			"opcodes": "PUSH1 0x80 PUSH1 0x40 MSTORE PUSH1 0x0 DUP1 REVERT INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 0xE6 SUB 0xE 0xED 0xC0 PUSH14 0x88F370A3131399566FA32AD22B28 0xA9 PUSH11 0xF7CB772D38CAB0A8868364 PUSH20 0x6F6C634300081200330000000000000000000000 ",
+			"sourceMap": "53823:1376:0:-:0;;;;;"
+		},
+		"gasEstimates": {
+			"creation": {
+				"codeDepositCost": "12600",
+				"executionCost": "66",
+				"totalCost": "12666"
+			}
+		},
+		"methodIdentifiers": {}
+	},
+	"abi": [
+		{
+			"inputs": [],
+			"name": "CANNOT_APPROVE_SELF",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "CANT_BE_SMALLER_THAN_SUPPLY",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "CANT_EXTEND_NON_EXPIRING_KEY",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "GAS_REFUND_FAILED",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "INSUFFICIENT_ERC20_VALUE",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "INSUFFICIENT_VALUE",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "INVALID_ADDRESS",
+			"type": "error"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint8",
+					"name": "hookIndex",
+					"type": "uint8"
+				}
+			],
+			"name": "INVALID_HOOK",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "INVALID_LENGTH",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "INVALID_TOKEN",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "KEY_NOT_VALID",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "KEY_TRANSFERS_DISABLED",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "LOCK_HAS_CHANGED",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "LOCK_SOLD_OUT",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "MAX_KEYS_REACHED",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "MIGRATION_REQUIRED",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "NON_COMPLIANT_ERC721_RECEIVER",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "NON_RENEWABLE_LOCK",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "NOT_ENOUGH_FUNDS",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "NOT_ENOUGH_TIME",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "NOT_READY_FOR_RENEWAL",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "NO_SUCH_KEY",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "NULL_VALUE",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "ONLY_KEY_MANAGER_OR_APPROVED",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "ONLY_LOCK_MANAGER",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "ONLY_LOCK_MANAGER_OR_KEY_GRANTER",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "OUT_OF_RANGE",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "OWNER_CANT_BE_ADDRESS_ZERO",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "SCHEMA_VERSION_NOT_CORRECT",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "TRANSFER_TO_SELF",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "UNAUTHORIZED",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "UNAUTHORIZED_KEY_MANAGER_UPDATE",
+			"type": "error"
+		}
+	]
+}

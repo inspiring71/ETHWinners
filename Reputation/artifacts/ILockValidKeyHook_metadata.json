@@ -1,0 +1,107 @@
+{
+	"compiler": {
+		"version": "0.8.18+commit.87f61d96"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "lockAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "operator",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "expirationTimestamp",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "keyOwner",
+						"type": "address"
+					},
+					{
+						"internalType": "bool",
+						"name": "isValidKey",
+						"type": "bool"
+					}
+				],
+				"name": "isValidKey",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"details": "Lock hooks are configured by calling `setEventHooks` on the lock.",
+			"kind": "dev",
+			"methods": {
+				"isValidKey(address,address,uint256,uint256,address,bool)": {
+					"params": {
+						"expirationTimestamp": "the key expiration timestamp",
+						"isValidKey": "the actual validity of the key",
+						"keyOwner": "the owner of the key",
+						"lockAddress": "the address of the current lock",
+						"operator": "the address that is calling the function (`msg.sender`)",
+						"tokenId": "the id of the token to check"
+					}
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"isValidKey(address,address,uint256,uint256,address,bool)": {
+					"notice": "If the lock owner has registered an implementer then this hook is called every time `isValidKey` is called (which affects `getHasValidKey` and `balanceOf`)"
+				}
+			},
+			"notice": "Functions to be implemented by a hasValidKey Hook.",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"Reputation/PublicLockV13.sol": "ILockValidKeyHook"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"Reputation/PublicLockV13.sol": {
+			"keccak256": "0x3151c081aaf1fe60df47d090c37dee2769380e39f438033a34c6ae5b87fa977e",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://bd86323f07c5ea30dfccdf11b2d8c17b3abecf3261e793097bb816f5b301f542",
+				"dweb:/ipfs/QmeZmaYt45JRHbJpFjxZw5w6K1E15935cohBULNiUERnd2"
+			]
+		}
+	},
+	"version": 1
+}

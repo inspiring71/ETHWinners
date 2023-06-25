@@ -1,0 +1,909 @@
+{
+	"compiler": {
+		"version": "0.8.18+commit.87f61d96"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "sender",
+						"type": "address"
+					}
+				],
+				"name": "__initializeOwnable",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "impl",
+						"type": "address"
+					},
+					{
+						"internalType": "uint16",
+						"name": "version",
+						"type": "uint16"
+					}
+				],
+				"name": "addLockTemplate",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "chainId",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_purchaser",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_keyPrice",
+						"type": "uint256"
+					}
+				],
+				"name": "computeAvailableDiscountFor",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "discount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "tokens",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_udt",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_weth",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_estimatedGasForPurchase",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "_symbol",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_URI",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_chainId",
+						"type": "uint256"
+					}
+				],
+				"name": "configUnlock",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_expirationDuration",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "_tokenAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_keyPrice",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_maxNumberOfKeys",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "_lockName",
+						"type": "string"
+					},
+					{
+						"internalType": "bytes12",
+						"name": "",
+						"type": "bytes12"
+					}
+				],
+				"name": "createLock",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes",
+						"name": "data",
+						"type": "bytes"
+					}
+				],
+				"name": "createUpgradeableLock",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes",
+						"name": "data",
+						"type": "bytes"
+					},
+					{
+						"internalType": "uint16",
+						"name": "_lockVersion",
+						"type": "uint16"
+					}
+				],
+				"name": "createUpgradeableLockAtVersion",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "estimatedGasForPurchase",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getAdmin",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getGlobalBaseTokenURI",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getGlobalTokenSymbol",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "globalBaseTokenURI",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "globalTokenSymbol",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "grossNetworkProduct",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_unlockOwner",
+						"type": "address"
+					}
+				],
+				"name": "initialize",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "initializeProxyAdmin",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "isOwner",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "locks",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "deployed",
+						"type": "bool"
+					},
+					{
+						"internalType": "uint256",
+						"name": "totalSales",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "yieldedDiscountTokens",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "networkBaseFee",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "postLockUpgrade",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "protocolFee",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "proxyAdminAddress",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "_proxyAdminAddress",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "publicLockAddress",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint16",
+						"name": "_version",
+						"type": "uint16"
+					}
+				],
+				"name": "publicLockImpls",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "_implAddress",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "publicLockLatestVersion",
+				"outputs": [
+					{
+						"internalType": "uint16",
+						"name": "_version",
+						"type": "uint16"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_impl",
+						"type": "address"
+					}
+				],
+				"name": "publicLockVersions",
+				"outputs": [
+					{
+						"internalType": "uint16",
+						"name": "",
+						"type": "uint16"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_discount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_tokens",
+						"type": "uint256"
+					}
+				],
+				"name": "recordConsumedDiscount",
+				"outputs": [],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_value",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "_referrer",
+						"type": "address"
+					}
+				],
+				"name": "recordKeyPurchase",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "renounceOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_grossNetworkProduct",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_totalDiscountGranted",
+						"type": "uint256"
+					}
+				],
+				"name": "resetTrackedValue",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address payable",
+						"name": "_publicLockAddress",
+						"type": "address"
+					}
+				],
+				"name": "setLockTemplate",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_tokenAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_oracleAddress",
+						"type": "address"
+					}
+				],
+				"name": "setOracle",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_protocolFee",
+						"type": "uint256"
+					}
+				],
+				"name": "setProtocolFee",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "totalDiscountGranted",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "transferOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "udt",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "uniswapOracles",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "unlockVersion",
+				"outputs": [
+					{
+						"internalType": "uint16",
+						"name": "",
+						"type": "uint16"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address payable",
+						"name": "lockAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "uint16",
+						"name": "version",
+						"type": "uint16"
+					}
+				],
+				"name": "upgradeLock",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "weth",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"addLockTemplate(address,uint16)": {
+					"details": "This is used to upgrade conytract per version number"
+				},
+				"computeAvailableDiscountFor(address,uint256)": {
+					"details": "[DEPRECATED] Kept for backwards compatibility This function returns the discount available for a user, when purchasing a a key from a lock. This does not modify the state. It returns both the discount and the number of tokens consumed to grant that discount."
+				},
+				"createLock(uint256,address,uint256,uint256,string,bytes12)": {
+					"details": "internally call `createUpgradeableLock`",
+					"params": {
+						"_expirationDuration": "the duration of the lock (pass 0 for unlimited duration)",
+						"_keyPrice": "the price of each key",
+						"_lockName": "the name of the lock param _salt [deprec] -- kept only for backwards copatibility This may be implemented as a sequence ID or with RNG. It's used with `create2` to know the lock's address before the transaction is mined.",
+						"_maxNumberOfKeys": "the maximum nimbers of keys to be edited",
+						"_tokenAddress": "set to the ERC20 token address, or 0 for ETH."
+					}
+				},
+				"createUpgradeableLock(bytes)": {
+					"details": "this call is passed as encoded function - for instance:  bytes memory data = abi.encodeWithSignature(    'initialize(address,uint256,address,uint256,uint256,string)',    msg.sender,    _expirationDuration,    _tokenAddress,    _keyPrice,    _maxNumberOfKeys,    _lockName  );",
+					"params": {
+						"data": "bytes containing the call to initialize the lock template"
+					},
+					"returns": {
+						"_0": "address of the create lock"
+					}
+				},
+				"createUpgradeableLockAtVersion(bytes,uint16)": {
+					"params": {
+						"_lockVersion": "the version of the lock to use",
+						"data": "bytes containing the call to initialize the lock template (refer to createUpgradeableLock for more details)"
+					}
+				},
+				"getAdmin()": {
+					"details": "this reads the address directly from storage, at the slot `_ADMIN_SLOT` defined by Open Zeppelin's EIP1967 Proxy implementation which corresponds to the keccak-256 hash of \"eip1967.proxy.admin\" subtracted by 1"
+				},
+				"getGlobalBaseTokenURI()": {
+					"details": "Redundant with globalBaseTokenURI() for backwards compatibility with v3 & v4 locks."
+				},
+				"getGlobalTokenSymbol()": {
+					"details": "Redundant with globalTokenSymbol() for backwards compatibility with v3 & v4 locks."
+				},
+				"initializeProxyAdmin()": {
+					"details": "deploy a ProxyAdmin contract used to upgrade locks"
+				},
+				"isOwner()": {
+					"details": "Returns true if the caller is the current owner."
+				},
+				"networkBaseFee()": {
+					"details": "this helper can be wrapped in try/catch statement to avoid revert in networks where EIP-1559 is not implemented"
+				},
+				"owner()": {
+					"details": "Returns the address of the current owner."
+				},
+				"postLockUpgrade()": {
+					"details": "The `msg.sender` will be the upgraded lock"
+				},
+				"protocolFee()": {
+					"returns": {
+						"_0": "the protocol fee in basic point"
+					}
+				},
+				"proxyAdminAddress()": {
+					"returns": {
+						"_proxyAdminAddress": "the address of the ProxyAdmin instance"
+					}
+				},
+				"publicLockImpls(uint16)": {
+					"params": {
+						"_version": "the number of the version of the template"
+					},
+					"returns": {
+						"_implAddress": "address of the lock templates"
+					}
+				},
+				"publicLockLatestVersion()": {
+					"returns": {
+						"_version": "the version number of the latest template (used to deploy contracts)"
+					}
+				},
+				"publicLockVersions(address)": {
+					"params": {
+						"_impl": "the address of the deployed template contract (PublicLock)"
+					},
+					"returns": {
+						"_0": "number of the version corresponding to this address"
+					}
+				},
+				"recordConsumedDiscount(uint256,uint256)": {
+					"details": "[DEPRECATED] Kept for backwards compatibility This function will keep track of consumed discounts by a given user. It will also grant discount tokens to the creator who is granting the discount based on the amount of discount and compensation rate. This function is invoked by a previously deployed lock only."
+				},
+				"renounceOwnership()": {
+					"details": "Leaves the contract without owner. It will not be possible to call `onlyOwner` functions anymore. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby removing any functionality that is only available to the owner."
+				},
+				"setLockTemplate(address)": {
+					"details": "This will initialize the template and revokeOwnership."
+				},
+				"setOracle(address,address)": {
+					"details": "This will also call update to ensure at least one datapoint has been recorded."
+				},
+				"setProtocolFee(uint256)": {
+					"params": {
+						"_protocolFee": "fee (in basis points)"
+					}
+				},
+				"transferOwnership(address)": {
+					"details": "Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner."
+				},
+				"upgradeLock(address,uint16)": {
+					"details": "only available for publicLockVersion > 10 (proxyAdmin /required)",
+					"params": {
+						"lockAddress": "the existing lock address",
+						"version": "the version number you are targeting Likely implemented with OpenZeppelin TransparentProxy contract"
+					}
+				}
+			},
+			"title": "The Unlock Interface*",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"addLockTemplate(address,uint16)": {
+					"notice": "Add a PublicLock template to be used for future calls to `createLock`."
+				},
+				"computeAvailableDiscountFor(address,uint256)": {
+					"notice": "[DEPRECATED] Call to this function has been removed from PublicLock > v9."
+				},
+				"configUnlock(address,address,uint256,string,string,uint256)": {
+					"notice": "Allows the owner to update configuration variables"
+				},
+				"createLock(uint256,address,uint256,uint256,string,bytes12)": {
+					"notice": "Create lock (legacy) This deploys a lock for a creator. It also keeps track of the deployed lock."
+				},
+				"createUpgradeableLock(bytes)": {
+					"notice": "Create lock (default) This deploys a lock for a creator. It also keeps track of the deployed lock."
+				},
+				"createUpgradeableLockAtVersion(bytes,uint16)": {
+					"notice": "Create an upgradeable lock using a specific PublicLock version"
+				},
+				"getAdmin()": {
+					"notice": "Returns the ProxyAdmin contract address that manage upgrades for the current Unlock contract."
+				},
+				"networkBaseFee()": {
+					"notice": "Helper to get the network mining basefee as introduced in EIP-1559"
+				},
+				"postLockUpgrade()": {
+					"notice": "Call executed by a lock after its version upgrade triggred by `upgradeLock` - PublicLock v12 > v13 (mainnet): migrate an existing Lock to another instance of the Unlock contract"
+				},
+				"protocolFee()": {
+					"notice": "The fee (in basis points) collected by the protocol on each purchase /  extension / renewal of a key"
+				},
+				"proxyAdminAddress()": {
+					"notice": "Retrieve the contract address of the proxy admin that manages the locks"
+				},
+				"publicLockImpls(uint16)": {
+					"notice": "Match lock templates addresses with version numbers"
+				},
+				"publicLockLatestVersion()": {
+					"notice": "Retrieve the latest existing lock template version"
+				},
+				"publicLockVersions(address)": {
+					"notice": "Match version numbers with lock templates addresses"
+				},
+				"recordConsumedDiscount(uint256,uint256)": {
+					"notice": "[DEPRECATED] Call to this function has been removed from PublicLock > v9."
+				},
+				"recordKeyPurchase(uint256,address)": {
+					"notice": "This function keeps track of the added GDP, as well as grants of discount tokens to the referrer, if applicable. The number of discount tokens granted is based on the value of the referal, the current growth rate and the lock's discount token distribution rate This function is invoked by a previously deployed lock only."
+				},
+				"setLockTemplate(address)": {
+					"notice": "Upgrade the PublicLock template used for future calls to `createLock`."
+				},
+				"setOracle(address,address)": {
+					"notice": "allows the owner to set the oracle address to use for value conversions setting the _oracleAddress to address(0) removes support for the token"
+				},
+				"setProtocolFee(uint256)": {
+					"notice": "Set the fee collected by the protocol"
+				},
+				"upgradeLock(address,uint16)": {
+					"notice": "Upgrade a lock to a specific version"
+				}
+			},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"Reputation/PublicLockV13.sol": "IUnlock"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"Reputation/PublicLockV13.sol": {
+			"keccak256": "0x3151c081aaf1fe60df47d090c37dee2769380e39f438033a34c6ae5b87fa977e",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://bd86323f07c5ea30dfccdf11b2d8c17b3abecf3261e793097bb816f5b301f542",
+				"dweb:/ipfs/QmeZmaYt45JRHbJpFjxZw5w6K1E15935cohBULNiUERnd2"
+			]
+		}
+	},
+	"version": 1
+}
